@@ -41,7 +41,7 @@ const DeleteContactModal = () => {
               fontWeight: "bold",
             }}
           >
-            Delete Contact
+            Delete Address
           </Typography>
           <br />
 
@@ -61,7 +61,7 @@ const DeleteContactModal = () => {
                 fontSize: "1em",
               }}
             >
-              Are you sure you want to delete this contact?
+              Are you sure you want to delete this address?
             </Typography>
             <Stack direction="row" spacing={2}>
               <Button

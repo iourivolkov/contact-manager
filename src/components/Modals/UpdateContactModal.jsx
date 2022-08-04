@@ -48,7 +48,7 @@ const UpdateContactModal = () => {
               fontWeight: "bold",
             }}
           >
-            Update Contact
+            Update Address
           </Typography>
           <br />
 
@@ -75,7 +75,7 @@ const UpdateContactModal = () => {
                   bgcolor: "blue",
                 }}
               >
-                Update Contact
+                Update
               </Button>
             </Stack>
           </Stack>

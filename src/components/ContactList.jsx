@@ -22,37 +22,41 @@ const ContactList = ({ contacts }) => {
           margin: "4em 3.5em 0 3.5em",
         }}
       >
-        <Stack direction="row" spacing={4}>
+        <Stack direction="column" spacing={2}>
+          <Stack direction="row" spacing={4}>
+            <Typography
+              variant="h6"
+              sx={{
+                fontFamily: "Futura",
+                fontWeight: "bold",
+                fontSize: "2em",
+              }}
+            >
+              Address Directory
+            </Typography>
+            <Button
+              onClick={handleAddContact}
+              disableRipple
+              disableElevation
+              variant="contained"
+              size="medium"
+              sx={{
+                bgcolor: "green",
+                fontFamily: "futura",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+            >
+              Add +
+            </Button>
+          </Stack>
           <Typography
             variant="h6"
-            sx={{
-              fontFamily: "Futura",
-              fontWeight: "bold",
-              fontSize: "2em",
-            }}
+            sx={{ fontFamily: "Futura", fontSize: "1em" }}
           >
-            Address Directory
+            Displaying {contacts.length} results
           </Typography>
-          <Button
-            onClick={handleAddContact}
-            disableRipple
-            disableElevation
-            variant="contained"
-            size="medium"
-            sx={{
-              bgcolor: "green",
-              fontFamily: "futura",
-              fontWeight: "bold",
-              cursor: "pointer",
-            }}
-          >
-            Add Address +
-          </Button>
         </Stack>
-
-        <Typography variant="h6" sx={{ fontFamily: "Futura", fontSize: "1em" }}>
-          Displaying {contacts.length} results
-        </Typography>
 
         <Box
           sx={{
@@ -83,8 +87,8 @@ const ContactList = ({ contacts }) => {
           return (
             <ContactCard
               name={contact.name}
-              mobile={contact.mobile}
-              email={contact.email}
+              walletAddress={contact.walletAddress}
+              chain={contact.chain}
               image={contact.image}
             />
           );
