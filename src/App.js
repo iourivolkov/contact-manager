@@ -8,16 +8,14 @@ import woman2 from "./assets/images/woman2.jpg";
 import ContactCard from "./components/ContactCard";
 import { Box } from "@mui/material";
 
-const title = "CNTKT";
-
-// hard-code array of contacts before creating back-end
+const title = "PBLK";
 
 const contactsArray = [
   {
     id: 1,
     name: "Peter Munk",
-    mobile: "6472728888",
-    email: "p.munk@gmail.com",
+    walletAddress: "6472728888",
+    chain: "p.munk@gmail.com",
     image: man1,
   },
   {
@@ -34,13 +32,6 @@ const contactsArray = [
     email: "ky@gmail.com",
     image: woman1,
   },
-  {
-    id: 4,
-    name: "Jennifer Dangelo",
-    mobile: "6478880909",
-    email: "dangeloo@gmail.com",
-    image: woman2,
-  },
 ];
 
 function App() {
@@ -50,17 +41,6 @@ function App() {
     <div className="App">
       <Navigation title={title} />
       <ContactList contacts={contacts} />
-      {/* {contactsArray.map((contact) => {
-        return (
-          <ContactCard
-            key={contact.id}
-            name={contact.name}
-            mobile={contact.mobile}
-            email={contact.email}
-            image={contact.image}
-          />
-        );
-      })} */}
     </div>
   );
 }

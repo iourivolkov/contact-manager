@@ -48,14 +48,14 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
               fontWeight: "bold",
             }}
           >
-            New Contact
+            New Address
           </Typography>
           <br />
           <br />
           <Stack spacing={3}>
-            <TextField label="Name" />
-            <TextField label="Mobile" />
-            <TextField label="Email" />
+            <TextField label="Address Type" />
+            <TextField label="Wallet Address" />
+            <TextField label="Chain" />
             <Button
               disableElevation
               disableRipple
@@ -67,7 +67,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
                 bgcolor: "green",
               }}
             >
-              Add Contact
+              Add Address
             </Button>
           </Stack>
         </Box>

@@ -31,7 +31,7 @@ const ContactList = ({ contacts }) => {
               fontSize: "2em",
             }}
           >
-            Contact Directory
+            Address Directory
           </Typography>
           <Button
             onClick={handleAddContact}
@@ -46,9 +46,14 @@ const ContactList = ({ contacts }) => {
               cursor: "pointer",
             }}
           >
-            Add Contact +
+            Add Address +
           </Button>
         </Stack>
+
+        <Typography variant="h6" sx={{ fontFamily: "Futura", fontSize: "1em" }}>
+          Displaying {contacts.length} results
+        </Typography>
+
         <Box
           sx={{
             display: "flex",

@@ -6,6 +6,7 @@ import {
   TextField,
   Stack,
   Button,
+  InputBase,
 } from "@mui/material";
 
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -52,7 +53,11 @@ const ContactCard = ({ name, mobile, email, image }) => {
               flexDirection: "row",
             }}
           >
-            <TextField label="Name" placeholder={name} />
+            <InputBase
+              label="Name"
+              placeholder={name}
+              sx={{ bgcolor: "#f2f2f2" }}
+            />
             <Button
               type="button"
               onClick={handleViewContact}
@@ -68,7 +73,11 @@ const ContactCard = ({ name, mobile, email, image }) => {
             </Button>
           </Stack>
           <Stack sx={{ display: "flex", flexDirection: "row" }}>
-            <TextField label="Mobile" placeholder={mobile} />
+            <InputBase
+              label="Mobile"
+              placeholder={mobile}
+              sx={{ bgcolor: "#f2f2f2" }}
+            />
             <Button
               onClick={handleEditContact}
               disableElevation
@@ -83,7 +92,11 @@ const ContactCard = ({ name, mobile, email, image }) => {
             </Button>
           </Stack>
           <Stack sx={{ display: "flex", flexDirection: "row" }}>
-            <TextField label="Email" placeholder={email} />
+            <InputBase
+              label="Email"
+              placeholder={email}
+              sx={{ bgcolor: "#f2f2f2" }}
+            />
             <Button
               onClick={handleDeleteContact}
               disableElevation

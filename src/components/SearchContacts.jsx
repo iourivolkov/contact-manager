@@ -18,7 +18,7 @@ const SearchContacts = () => {
     >
       <InputBase
         sx={{ ml: 1, flex: 1, fontFamily: "Futura" }}
-        placeholder="Search contacts.."
+        placeholder="Search addresses.."
       />
       <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
         <SearchIcon />
