@@ -125,52 +125,69 @@
 
 // export default ContactCard;
 
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Ethereum from "../assets/images/Ethereum.png";
 import Solana from "../assets/images/Solana.png";
 
-const ContactCard = () => {
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography,
+  Stack,
+} from "@mui/material";
+
+const ContactCard = ({ name, walletAddress, chain }) => {
   return (
     <Card sx={{ maxWidth: 400, marginTop: "5em" }}>
       <CardMedia
         component="img"
         height="120"
-        image={Solana}
+        image={chain === "Ethereum" ? Ethereum : Solana}
         alt="chain banner"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Wallet 1
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          0xF6C01b47B5FF69D58C320031BB3727d70E6E7CcD
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button
-          disableElevation
-          disableRipple
-          size="medium"
-          variant="contained"
-          sx={{ bgcolor: "#536DFE" }}
-        >
-          Edit
-        </Button>
-        <Button
-          disableElevation
-          disableRipple
-          size="medium"
-          variant="contained"
-          sx={{ bgcolor: "#D32F2F" }}
-        >
-          Delete
-        </Button>
-      </CardActions>
+      <Stack
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <CardContent>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            textAlign="center"
+          >
+            {name}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {walletAddress}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <Button
+            disableElevation
+            disableRipple
+            size="medium"
+            variant="contained"
+            sx={{ bgcolor: "#536DFE" }}
+          >
+            Edit
+          </Button>
+          <Button
+            disableElevation
+            disableRipple
+            size="medium"
+            variant="contained"
+            sx={{ bgcolor: "#D32F2F" }}
+          >
+            Delete
+          </Button>
+        </CardActions>
+      </Stack>
     </Card>
   );
 };

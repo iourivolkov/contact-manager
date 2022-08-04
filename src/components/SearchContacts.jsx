@@ -13,7 +13,7 @@ const SearchContacts = () => {
         display: "flex",
         alignItems: "center",
         width: 300,
-        bgcolor: "#fafafa",
+        bgcolor: "#f0f0f0",
       }}
     >
       <InputBase

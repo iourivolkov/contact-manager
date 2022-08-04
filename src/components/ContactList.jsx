@@ -4,7 +4,7 @@ import ContactCard from "./ContactCard";
 import SearchContacts from "./SearchContacts";
 import AddContactModal from "../components/Modals/AddContactModal";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ contacts, walletAddresses }) => {
   const [isAddModal, setIsAddModal] = useState(false);
 
   const handleAddContact = () => {
@@ -39,12 +39,13 @@ const ContactList = ({ contacts }) => {
               disableRipple
               disableElevation
               variant="contained"
-              size="medium"
+              size="large"
               sx={{
                 bgcolor: "green",
                 fontFamily: "futura",
                 fontWeight: "bold",
                 cursor: "pointer",
+                height: "3em",
               }}
             >
               Add +
@@ -54,7 +55,7 @@ const ContactList = ({ contacts }) => {
             variant="h6"
             sx={{ fontFamily: "Futura", fontSize: "1em" }}
           >
-            Displaying {contacts.length} results
+            Displaying {walletAddresses.length} results
           </Typography>
         </Stack>
 
@@ -79,17 +80,17 @@ const ContactList = ({ contacts }) => {
           display: "flex",
           flexDirection: "row",
           flexWrap: "wrap",
-          justifyContent: "space-evenly",
+          justifyContent: "space-around",
           alignItems: "center",
         }}
       >
-        {contacts.map((contact) => {
+        {walletAddresses.map((address) => {
           return (
             <ContactCard
-              name={contact.name}
-              walletAddress={contact.walletAddress}
-              chain={contact.chain}
-              image={contact.image}
+              key={address.id}
+              name={address.name}
+              walletAddress={address.walletAddress}
+              chain={address.chain}
             />
           );
         })}
