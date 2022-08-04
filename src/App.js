@@ -2,6 +2,7 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import ContactList from "./components/ContactList";
 import AddContactModal from "./components/Modals/AddContactModal";
+import DeleteContactModal from "./components/Modals/DeleteContactModal";
 
 const title = "CNTKT";
 
@@ -10,7 +11,7 @@ function App() {
     <div className="App">
       <Navigation title={title} />
       {/* <ContactList /> */}
-      <AddContactModal />
+      <DeleteContactModal />
     </div>
   );
 }
