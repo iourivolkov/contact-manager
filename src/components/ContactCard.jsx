@@ -20,6 +20,7 @@ const ContactCard = () => {
         flexDirection: "row-reverse",
         width: "550px",
         borderRadius: "0",
+        marginTop: "4em",
       }}
     >
       <CardContent
@@ -81,7 +82,7 @@ const ContactCard = () => {
 
       <CardMedia
         component="img"
-        sx={{ width: 232, height: 232, position: "fixed", left: 8 }}
+        sx={{ width: 232, height: 232 }}
         image={man1}
         alt="Contact 1"
       />

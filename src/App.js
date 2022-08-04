@@ -1,7 +1,6 @@
 import "./App.css";
 import Navigation from "./components/Navigation";
-import ContactCard from "./components/ContactCard";
-import SearchContacts from "./components/SearchContacts";
+import ContactList from "./components/ContactList";
 
 const title = "CNTKT";
 
@@ -9,8 +8,7 @@ function App() {
   return (
     <div className="App">
       <Navigation title={title} />
-      {/* <ContactCard /> */}
-      <SearchContacts />
+      <ContactList />
     </div>
   );
 }

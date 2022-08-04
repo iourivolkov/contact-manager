@@ -2,7 +2,7 @@ import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 
 const Navigation = ({ title }) => {
   return (
-    <Box>
+    <Box sx={{ bgcolor: "white" }}>
       <AppBar
         position="static"
         color="inherit"
