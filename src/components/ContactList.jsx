@@ -4,7 +4,7 @@ import ContactCard from "./ContactCard";
 import SearchContacts from "./SearchContacts";
 import AddContactModal from "../components/Modals/AddContactModal";
 
-const ContactList = () => {
+const ContactList = ({ contacts }) => {
   const [isAddModal, setIsAddModal] = useState(false);
 
   const handleAddContact = () => {
@@ -58,23 +58,33 @@ const ContactList = () => {
           <SearchContacts />
         </Box>
       </Box>
-      <Box
+
+      {isAddModal && (
+        <AddContactModal
+          isAddModal={isAddModal}
+          setIsAddModal={setIsAddModal}
+        />
+      )}
+      <Stack
         sx={{
           display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flex-start",
           flexDirection: "row",
-          margin: "2em 0 0 4.5em",
+          flexWrap: "wrap",
+          justifyContent: "space-evenly",
+          alignItems: "center",
         }}
       >
-        <ContactCard />
-        {isAddModal && (
-          <AddContactModal
-            isAddModal={isAddModal}
-            setIsAddModal={setIsAddModal}
-          />
-        )}
-      </Box>
+        {contacts.map((contact) => {
+          return (
+            <ContactCard
+              name={contact.name}
+              mobile={contact.mobile}
+              email={contact.email}
+              image={contact.image}
+            />
+          );
+        })}
+      </Stack>
     </>
   );
 };

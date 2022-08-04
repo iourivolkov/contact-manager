@@ -6,6 +6,7 @@ import man2 from "./assets/images/man2.jpg";
 import woman1 from "./assets/images/woman1.jpg";
 import woman2 from "./assets/images/woman2.jpg";
 import ContactCard from "./components/ContactCard";
+import { Box } from "@mui/material";
 
 const title = "CNTKT";
 
@@ -43,11 +44,13 @@ const contactsArray = [
 ];
 
 function App() {
+  const [contacts, setContacts] = useState(contactsArray);
+
   return (
     <div className="App">
       <Navigation title={title} />
-      <ContactList />
-      {contactsArray.map((contact) => {
+      <ContactList contacts={contacts} />
+      {/* {contactsArray.map((contact) => {
         return (
           <ContactCard
             key={contact.id}
@@ -57,7 +60,7 @@ function App() {
             image={contact.image}
           />
         );
-      })}
+      })} */}
     </div>
   );
 }

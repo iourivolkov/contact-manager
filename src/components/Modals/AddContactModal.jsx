@@ -27,6 +27,8 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
   const [open, setOpen] = useState(false);
   const handleClose = () => setIsAddModal(false);
 
+  // @todo - add Image to new contact
+
   return (
     <div>
       <Modal
