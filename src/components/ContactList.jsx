@@ -42,8 +42,6 @@ const ContactList = () => {
         }}
       >
         <ContactCard />
-        <ContactCard />
-        <ContactCard />
       </Box>
     </>
   );

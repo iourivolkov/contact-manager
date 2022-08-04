@@ -18,7 +18,7 @@ const ContactCard = () => {
       sx={{
         display: "flex",
         flexDirection: "row-reverse",
-        width: "550px",
+        width: "530px",
         borderRadius: "0",
         marginTop: "4em",
       }}
@@ -27,9 +27,11 @@ const ContactCard = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <Stack spacing={1}>
+        <Stack spacing={2}>
           <Stack
             sx={{
               display: "flex",

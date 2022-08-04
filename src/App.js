@@ -1,4 +1,4 @@
-import "./App.css";
+import { useState } from "react";
 import Navigation from "./components/Navigation";
 import ContactList from "./components/ContactList";
 import AddContactModal from "./components/Modals/AddContactModal";
@@ -11,8 +11,7 @@ function App() {
   return (
     <div className="App">
       <Navigation title={title} />
-      {/* <ContactList /> */}
-      <UpdateContactModal />
+      <ContactList />
     </div>
   );
 }
