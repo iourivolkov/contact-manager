@@ -28,7 +28,7 @@ const ContactCard = () => {
           flexDirection: "column",
         }}
       >
-        <Stack spacing={2}>
+        <Stack spacing={1}>
           <Stack
             sx={{
               display: "flex",
@@ -37,12 +37,12 @@ const ContactCard = () => {
           >
             <TextField label="Name" />
             <Button
+              disableElevation
               disableRipple
               variant="contained"
               sx={{
                 bgcolor: "#E1CF2C",
                 color: "white",
-                boxShadow: "none",
               }}
             >
               <VisibilityIcon />
@@ -51,12 +51,12 @@ const ContactCard = () => {
           <Stack sx={{ display: "flex", flexDirection: "row" }}>
             <TextField label="Mobile" />
             <Button
+              disableElevation
               disableRipple
               variant="contained"
               sx={{
                 bgcolor: "#3A8EDC",
                 color: "white",
-                boxShadow: "none",
               }}
             >
               <EditIcon />
@@ -65,11 +65,11 @@ const ContactCard = () => {
           <Stack sx={{ display: "flex", flexDirection: "row" }}>
             <TextField label="Email" />
             <Button
+              disableElevation
               disableRipple
               sx={{
                 bgcolor: "#E27C5B",
                 color: "white",
-                boxShadow: "none",
               }}
             >
               <DeleteIcon />
@@ -81,7 +81,7 @@ const ContactCard = () => {
 
       <CardMedia
         component="img"
-        sx={{ width: 240, height: 232, position: "fixed", left: 8 }}
+        sx={{ width: 232, height: 232, position: "fixed", left: 8 }}
         image={man1}
         alt="Contact 1"
       />
