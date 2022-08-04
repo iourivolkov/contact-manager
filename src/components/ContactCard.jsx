@@ -7,12 +7,26 @@ import {
   Stack,
   Button,
 } from "@mui/material";
-import man1 from "../assets/images/man1.jpg";
+
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import UpdateContactModal from "./Modals/UpdateContactModal";
+import DeleteContactModal from "./Modals/DeleteContactModal";
 
-const ContactCard = () => {
+const ContactCard = ({ name, mobile, email, image }) => {
+  const handleViewContact = () => {
+    console.log("Contact hidden!");
+  };
+
+  const handleEditContact = () => {
+    console.log("Editing contact!!");
+  };
+
+  const handleDeleteContact = () => {
+    console.log("Deleting contact!!");
+  };
+
   return (
     <Card
       sx={{
@@ -38,8 +52,10 @@ const ContactCard = () => {
               flexDirection: "row",
             }}
           >
-            <TextField label="Name" />
+            <TextField label="Name" placeholder={name} />
             <Button
+              type="button"
+              onClick={handleViewContact}
               disableElevation
               disableRipple
               variant="contained"
@@ -52,8 +68,9 @@ const ContactCard = () => {
             </Button>
           </Stack>
           <Stack sx={{ display: "flex", flexDirection: "row" }}>
-            <TextField label="Mobile" />
+            <TextField label="Mobile" placeholder={mobile} />
             <Button
+              onClick={handleEditContact}
               disableElevation
               disableRipple
               variant="contained"
@@ -66,8 +83,9 @@ const ContactCard = () => {
             </Button>
           </Stack>
           <Stack sx={{ display: "flex", flexDirection: "row" }}>
-            <TextField label="Email" />
+            <TextField label="Email" placeholder={email} />
             <Button
+              onClick={handleDeleteContact}
               disableElevation
               disableRipple
               sx={{
@@ -85,8 +103,8 @@ const ContactCard = () => {
       <CardMedia
         component="img"
         sx={{ width: 232, height: 232 }}
-        image={man1}
-        alt="Contact 1"
+        image={image}
+        alt="Contact photo"
       />
     </Card>
   );

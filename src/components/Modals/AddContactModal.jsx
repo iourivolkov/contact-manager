@@ -23,16 +23,14 @@ const style = {
   alignItems: "center",
 };
 
-const AddContactModal = () => {
+const AddContactModal = ({ isAddModal, setIsAddModal }) => {
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => setIsAddModal(false);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
-        open={open}
+        open={isAddModal}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
