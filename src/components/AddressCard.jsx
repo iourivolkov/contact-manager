@@ -56,7 +56,7 @@ const AddressCard = ({ name, walletAddress, chain }) => {
             variant="contained"
             sx={{ bgcolor: "#536DFE" }}
           >
-            Edit
+            Update
           </Button>
           <Button
             onClick={() => {
