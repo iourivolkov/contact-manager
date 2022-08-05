@@ -16,17 +16,12 @@ const style = {
   alignItems: "center",
 };
 
-const DeleteAddressModal = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal }) => {
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={isDeleteModal}
+        onClose={() => setIsDeleteModal(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -66,6 +61,7 @@ const DeleteAddressModal = () => {
             <Stack direction="row" spacing={2}>
               <Button
                 disableElevation
+                onClick={() => setIsDeleteModal(false)}
                 disableRipple
                 variant="contained"
                 size="large"

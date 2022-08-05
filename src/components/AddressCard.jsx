@@ -47,6 +47,9 @@ const AddressCard = ({ name, walletAddress, chain }) => {
         </CardContent>
         <CardActions>
           <Button
+            onClick={() => {
+              setIsEditModal(true);
+            }}
             disableElevation
             disableRipple
             size="medium"
@@ -56,6 +59,9 @@ const AddressCard = ({ name, walletAddress, chain }) => {
             Edit
           </Button>
           <Button
+            onClick={() => {
+              setIsDeleteModal(true);
+            }}
             disableElevation
             disableRipple
             size="medium"
@@ -65,6 +71,18 @@ const AddressCard = ({ name, walletAddress, chain }) => {
             Delete
           </Button>
         </CardActions>
+        {isEditModal && (
+          <UpdateAddressModal
+            isEditModal={isEditModal}
+            setIsEditModal={setIsEditModal}
+          />
+        )}
+        {isDeleteModal && (
+          <DeleteAddressModal
+            isDeleteModal={isDeleteModal}
+            setIsDeleteModal={setIsDeleteModal}
+          />
+        )}
       </Stack>
     </Card>
   );

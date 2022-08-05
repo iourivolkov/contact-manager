@@ -23,17 +23,14 @@ const style = {
   alignItems: "center",
 };
 
-const UpdateAddressModal = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={isEditModal}
+        onClose={() => {
+          setIsEditModal(false);
+        }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
