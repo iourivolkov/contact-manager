@@ -61,21 +61,6 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal }) => {
             <Stack direction="row" spacing={2}>
               <Button
                 disableElevation
-                onClick={() => setIsDeleteModal(false)}
-                disableRipple
-                variant="contained"
-                size="large"
-                sx={{
-                  textTransform: "uppercase",
-                  color: "#9E9E9E",
-                  bgcolor: "white",
-                  border: "2px solid grey",
-                }}
-              >
-                Cancel
-              </Button>
-              <Button
-                disableElevation
                 disableRipple
                 variant="contained"
                 size="large"
