@@ -16,7 +16,7 @@ const style = {
   alignItems: "center",
 };
 
-const DeleteContactModal = () => {
+const DeleteAddressModal = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -99,4 +99,4 @@ const DeleteContactModal = () => {
   );
 };
 
-export default DeleteContactModal;
+export default DeleteAddressModal;

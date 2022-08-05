@@ -1,9 +1,6 @@
 import { useState } from "react";
 import Navigation from "./components/Navigation";
-import ContactList from "./components/ContactList";
-
-import ContactCard from "./components/ContactCard";
-import { Box } from "@mui/material";
+import AddressesList from "./components/AddressesList";
 
 const title = "PBLK";
 
@@ -40,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Navigation title={title} />
-      <ContactList walletAddresses={addresses} />
+      <AddressesList walletAddresses={addresses} />
     </div>
   );
 }

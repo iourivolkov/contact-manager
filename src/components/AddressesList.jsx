@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
-import ContactCard from "./ContactCard";
-import SearchContacts from "./SearchContacts";
-import AddContactModal from "../components/Modals/AddContactModal";
+import SearchContacts from "./SearchAddresses";
+import AddContactModal from "./Modals/AddContactModal";
+import AddressCard from "./AddressCard";
 
-const ContactList = ({ contacts, walletAddresses }) => {
+const AddressesList = ({ contacts, walletAddresses }) => {
   const [isAddModal, setIsAddModal] = useState(false);
 
   const handleAddContact = () => {
@@ -86,7 +86,7 @@ const ContactList = ({ contacts, walletAddresses }) => {
       >
         {walletAddresses.map((address) => {
           return (
-            <ContactCard
+            <AddressCard
               key={address.id}
               name={address.name}
               walletAddress={address.walletAddress}
@@ -99,4 +99,4 @@ const ContactList = ({ contacts, walletAddresses }) => {
   );
 };
 
-export default ContactList;
+export default AddressesList;
