@@ -42,10 +42,10 @@ const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
     setWalletChain(e.target.value);
   };
 
+  // updated address requires -> id, newAddress
   const handleUpdateAddress = (e) => {
     e.preventDefault();
     setUpdateAddress({
-      id: Math.random(),
       name: addressName,
       walletAddress: walletAddress,
       chain: walletChain,

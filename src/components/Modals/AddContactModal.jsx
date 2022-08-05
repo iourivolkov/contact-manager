@@ -24,10 +24,35 @@ const style = {
 };
 
 const AddContactModal = ({ isAddModal, setIsAddModal }) => {
-  const [open, setOpen] = useState(false);
   const handleClose = () => setIsAddModal(false);
 
-  // @todo - add Image to new contact
+  const [addressType, setAddressType] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
+  const [walletChain, setWalletChain] = useState("");
+  const [handleNewAddress, setHandleNewAddress] = useState(null);
+
+  const handleAddressType = (e) => {
+    setAddressType(e.target.value);
+  };
+
+  const handleWalletAddress = (e) => {
+    setWalletAddress(e.target.value);
+  };
+
+  const handleWalletChain = (e) => {
+    setWalletChain(e.target.value);
+  };
+
+  const handleAddAddress = (e) => {
+    e.preventDefault();
+    setHandleNewAddress({
+      id: Math.random(),
+      name: addressType,
+      walletAddress: walletAddress,
+      chain: walletChain,
+    });
+    console.log(handleNewAddress);
+  };
 
   return (
     <div>
@@ -52,25 +77,43 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
           </Typography>
           <br />
           <br />
-          <Stack spacing={3}>
-            <TextField label="Address Type" />
-            <TextField label="Wallet Address" />
-            <TextField label="Chain" />
-            <Button
-              disableElevation
-              disableRipple
-              variant="contained"
-              size="large"
-              sx={{
-                textTransform: "uppercase",
-                color: "white",
-                bgcolor: "green",
-                borderRadius: "0",
-              }}
-            >
-              Add Address
-            </Button>
-          </Stack>
+          <form onSubmit={handleNewAddress}>
+            <Stack spacing={3}>
+              <TextField
+                label="Address Type"
+                type="text"
+                onChange={handleAddressType}
+                value={addressType}
+              />
+              <TextField
+                label="Wallet Address"
+                type="text"
+                onChange={handleWalletAddress}
+                value={walletAddress}
+              />
+              <TextField
+                label="Chain"
+                type="text"
+                onChange={handleWalletChain}
+                value={walletChain}
+              />
+              <Button
+                disableElevation
+                type="submit"
+                disableRipple
+                variant="contained"
+                size="large"
+                sx={{
+                  textTransform: "uppercase",
+                  color: "white",
+                  bgcolor: "green",
+                  borderRadius: "0",
+                }}
+              >
+                Add Address
+              </Button>
+            </Stack>
+          </form>
         </Box>
       </Modal>
     </div>
