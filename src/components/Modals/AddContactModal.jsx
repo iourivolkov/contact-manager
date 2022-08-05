@@ -65,6 +65,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
                 textTransform: "uppercase",
                 color: "white",
                 bgcolor: "green",
+                borderRadius: "0",
               }}
             >
               Add Address

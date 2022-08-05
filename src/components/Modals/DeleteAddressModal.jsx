@@ -68,6 +68,7 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal }) => {
                   textTransform: "uppercase",
                   color: "white",
                   bgcolor: "red",
+                  borderRadius: "0",
                 }}
               >
                 Delete

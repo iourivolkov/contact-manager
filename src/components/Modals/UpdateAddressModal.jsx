@@ -70,6 +70,7 @@ const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
                   textTransform: "uppercase",
                   color: "white",
                   bgcolor: "blue",
+                  borderRadius: "0",
                 }}
               >
                 Update

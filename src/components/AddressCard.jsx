@@ -18,7 +18,13 @@ const AddressCard = ({ name, walletAddress, chain }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
   return (
-    <Card sx={{ maxWidth: 400, marginTop: "5em", borderRadius: "0" }}>
+    <Card
+      sx={{
+        maxWidth: 400,
+        marginTop: "5em",
+        borderRadius: "0",
+      }}
+    >
       <CardMedia
         component="img"
         height="120"
