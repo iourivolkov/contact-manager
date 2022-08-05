@@ -6,6 +6,7 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
+
 import { useState } from "react";
 
 const style = {
@@ -24,6 +25,34 @@ const style = {
 };
 
 const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
+  const [addressName, setAddressName] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
+  const [walletChain, setWalletChain] = useState("");
+  const [updateAddress, setUpdateAddress] = useState(null);
+
+  const handleAddressName = (e) => {
+    setAddressName(e.target.value);
+  };
+
+  const handleWalletAddress = (e) => {
+    setWalletAddress(e.target.value);
+  };
+
+  const handleWalletChain = (e) => {
+    setWalletChain(e.target.value);
+  };
+
+  const handleUpdateAddress = (e) => {
+    e.preventDefault();
+    setUpdateAddress({
+      id: Math.random(),
+      name: addressName,
+      walletAddress: walletAddress,
+      chain: walletChain,
+    });
+    console.log(updateAddress);
+  };
+
   return (
     <div>
       <Modal
@@ -48,35 +77,52 @@ const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
             Update Address
           </Typography>
           <br />
-
-          <Stack
-            spacing={3}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <TextField label="Name" />
-            <TextField label="Mobile" />
-            <TextField label="Email" />
-            <Stack direction="row" spacing={2}>
-              <Button
-                disableElevation
-                disableRipple
-                variant="contained"
-                size="large"
-                sx={{
-                  textTransform: "uppercase",
-                  color: "white",
-                  bgcolor: "blue",
-                  borderRadius: "0",
-                }}
-              >
-                Update
-              </Button>
+          <form onSubmit={handleUpdateAddress}>
+            <Stack
+              spacing={3}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <TextField
+                label="Name"
+                type="text"
+                onChange={handleAddressName}
+                value={addressName}
+              />
+              <TextField
+                type="text"
+                label="Wallet Address"
+                onChange={handleWalletAddress}
+                value={walletAddress}
+              />
+              <TextField
+                type="text"
+                label="Chain"
+                onChange={handleWalletChain}
+                value={walletChain}
+              />
+              <Stack direction="row" spacing={2}>
+                <Button
+                  type="submit"
+                  disableElevation
+                  disableRipple
+                  variant="contained"
+                  size="large"
+                  sx={{
+                    textTransform: "uppercase",
+                    color: "white",
+                    bgcolor: "blue",
+                    borderRadius: "0",
+                  }}
+                >
+                  Update
+                </Button>
+              </Stack>
             </Stack>
-          </Stack>
+          </form>
         </Box>
       </Modal>
     </div>
