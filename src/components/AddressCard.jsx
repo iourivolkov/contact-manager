@@ -18,7 +18,7 @@ const AddressCard = ({ name, walletAddress, chain }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
   return (
-    <Card sx={{ maxWidth: 400, marginTop: "5em" }}>
+    <Card sx={{ maxWidth: 400, marginTop: "5em", borderRadius: "0" }}>
       <CardMedia
         component="img"
         height="120"
@@ -54,7 +54,7 @@ const AddressCard = ({ name, walletAddress, chain }) => {
             disableRipple
             size="medium"
             variant="contained"
-            sx={{ bgcolor: "#536DFE" }}
+            sx={{ bgcolor: "#536DFE", borderRadius: "0" }}
           >
             Update
           </Button>
@@ -66,7 +66,7 @@ const AddressCard = ({ name, walletAddress, chain }) => {
             disableRipple
             size="medium"
             variant="contained"
-            sx={{ bgcolor: "#D32F2F" }}
+            sx={{ bgcolor: "#D32F2F", borderRadius: "0" }}
           >
             Delete
           </Button>

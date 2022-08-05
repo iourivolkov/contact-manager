@@ -46,6 +46,7 @@ const AddressesList = ({ contacts, walletAddresses }) => {
                 fontWeight: "bold",
                 cursor: "pointer",
                 height: "3em",
+                borderRadius: "0",
               }}
             >
               Add +

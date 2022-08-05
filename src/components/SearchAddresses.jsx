@@ -14,6 +14,7 @@ const SearchContacts = () => {
         alignItems: "center",
         width: 300,
         bgcolor: "#f0f0f0",
+        borderRadius: "0",
       }}
     >
       <InputBase
