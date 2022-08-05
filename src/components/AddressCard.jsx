@@ -1,5 +1,6 @@
 import Ethereum from "../assets/images/Ethereum.png";
 import Solana from "../assets/images/Solana.png";
+import avax from "../assets/images/avax.jpeg";
 import { useState } from "react";
 import DeleteAddressModal from "./Modals/DeleteAddressModal";
 import UpdateAddressModal from "./Modals/UpdateAddressModal";
@@ -22,6 +23,8 @@ const AddressCard = ({ name, walletAddress, chain }) => {
   return (
     <Card
       sx={{
+        boxShadow: "none",
+        border: "0.5px solid grey",
         maxWidth: 400,
         marginTop: "5em",
         borderRadius: "0",
@@ -30,7 +33,12 @@ const AddressCard = ({ name, walletAddress, chain }) => {
       <CardMedia
         component="img"
         height="120"
-        image={chain === "Ethereum" ? Ethereum : Solana}
+        // image={chain === "Ethereum" ? Ethereum : Solana}
+        image={
+          (chain === "Ethereum" && Ethereum) ||
+          (chain === "Solana" && Solana) ||
+          (chain === "Avalanche" && avax)
+        }
         alt="chain banner"
       />
       <Stack

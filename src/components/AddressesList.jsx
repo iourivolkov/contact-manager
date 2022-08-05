@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
 import SearchContacts from "./SearchAddresses";
-import AddContactModal from "./Modals/AddContactModal";
+import AddContactModal from "./Modals/AddAddressModal";
 import AddressCard from "./AddressCard";
 
 const AddressesList = ({ walletAddresses, setAddresses }) => {
@@ -11,6 +11,8 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
     console.log("Contact added!");
     setIsAddModal(true);
   };
+
+  console.log(walletAddresses);
 
   return (
     <>
@@ -87,7 +89,7 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
           alignItems: "center",
         }}
       >
-        {walletAddresses.map((address) => {
+        {walletAddresses?.map((address) => {
           return (
             <AddressCard
               key={address.id}

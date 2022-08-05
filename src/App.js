@@ -28,12 +28,14 @@ const addressesArray = [
     id: uuidv4(),
     name: "Ledger S",
     walletAddress: "0x91CA0573f4D71398342685391A0e71653630e588",
-    chain: "Ethereum",
+    chain: "Avalanche",
   },
 ];
 
 function App() {
   const [addresses, setAddresses] = useState(addressesArray);
+
+  console.log(addresses);
 
   return (
     <div className="App">
