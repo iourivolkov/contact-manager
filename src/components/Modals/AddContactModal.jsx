@@ -7,6 +7,7 @@ import {
   Stack,
 } from "@mui/material";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const style = {
   position: "absolute",
@@ -23,20 +24,24 @@ const style = {
   alignItems: "center",
 };
 
-const AddContactModal = ({ isAddModal, setIsAddModal }) => {
+const AddContactModal = ({
+  isAddModal,
+  setIsAddModal,
+  walletAddresses,
+  setAddresses,
+}) => {
   const handleClose = () => setIsAddModal(false);
 
   const [addressType, setAddressType] = useState("");
-  const [walletAddress, setWalletAddress] = useState("");
+  const [newWalletAddress, setNewWalletAddress] = useState("");
   const [walletChain, setWalletChain] = useState("");
-  const [handleNewAddress, setHandleNewAddress] = useState(null);
 
   const handleAddressType = (e) => {
     setAddressType(e.target.value);
   };
 
   const handleWalletAddress = (e) => {
-    setWalletAddress(e.target.value);
+    setNewWalletAddress(e.target.value);
   };
 
   const handleWalletChain = (e) => {
@@ -45,13 +50,16 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
 
   const handleAddAddress = (e) => {
     e.preventDefault();
-    setHandleNewAddress({
-      id: Math.random(),
+    const newAddress = {
+      id: uuidv4(),
       name: addressType,
-      walletAddress: walletAddress,
+      walletAddress: newWalletAddress,
       chain: walletChain,
-    });
-    console.log(handleNewAddress);
+    };
+    setAddresses((prev) => ({
+      newAddress,
+      ...walletAddresses,
+    }));
   };
 
   return (
@@ -77,7 +85,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
           </Typography>
           <br />
           <br />
-          <form onSubmit={handleNewAddress}>
+          <form onSubmit={handleAddAddress}>
             <Stack spacing={3}>
               <TextField
                 label="Address Type"
@@ -89,7 +97,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
                 label="Wallet Address"
                 type="text"
                 onChange={handleWalletAddress}
-                value={walletAddress}
+                value={newWalletAddress}
               />
               <TextField
                 label="Chain"

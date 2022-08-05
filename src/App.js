@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <Navigation title={title} />
-      <AddressesList walletAddresses={addresses} />
+      <AddressesList walletAddresses={addresses} setAddresses={setAddresses} />
     </div>
   );
 }

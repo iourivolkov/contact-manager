@@ -4,7 +4,7 @@ import SearchContacts from "./SearchAddresses";
 import AddContactModal from "./Modals/AddContactModal";
 import AddressCard from "./AddressCard";
 
-const AddressesList = ({ contacts, walletAddresses }) => {
+const AddressesList = ({ walletAddresses, setAddresses }) => {
   const [isAddModal, setIsAddModal] = useState(false);
 
   const handleAddContact = () => {
@@ -74,6 +74,8 @@ const AddressesList = ({ contacts, walletAddresses }) => {
         <AddContactModal
           isAddModal={isAddModal}
           setIsAddModal={setIsAddModal}
+          walletAddresses={walletAddresses}
+          setAddresses={setAddresses}
         />
       )}
       <Stack
