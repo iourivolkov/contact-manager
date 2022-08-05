@@ -3,6 +3,8 @@ import Solana from "../assets/images/Solana.png";
 import { useState } from "react";
 import DeleteAddressModal from "./Modals/DeleteAddressModal";
 import UpdateAddressModal from "./Modals/UpdateAddressModal";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import {
   Card,
@@ -62,7 +64,7 @@ const AddressCard = ({ name, walletAddress, chain }) => {
             variant="contained"
             sx={{ bgcolor: "#536DFE", borderRadius: "0" }}
           >
-            Update
+            <EditIcon />
           </Button>
           <Button
             onClick={() => {
@@ -74,7 +76,7 @@ const AddressCard = ({ name, walletAddress, chain }) => {
             variant="contained"
             sx={{ bgcolor: "#D32F2F", borderRadius: "0" }}
           >
-            Delete
+            <DeleteIcon />
           </Button>
         </CardActions>
         {isEditModal && (

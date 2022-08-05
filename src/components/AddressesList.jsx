@@ -3,6 +3,7 @@ import { Box, Typography, Button, Stack } from "@mui/material";
 import SearchContacts from "./SearchAddresses";
 import AddContactModal from "./Modals/AddContactModal";
 import AddressCard from "./AddressCard";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 const AddressesList = ({ contacts, walletAddresses }) => {
   const [isAddModal, setIsAddModal] = useState(false);
@@ -46,10 +47,9 @@ const AddressesList = ({ contacts, walletAddresses }) => {
                 fontWeight: "bold",
                 cursor: "pointer",
                 height: "3em",
-                borderRadius: "0",
               }}
             >
-              Add +
+              Add New +
             </Button>
           </Stack>
           <Typography
