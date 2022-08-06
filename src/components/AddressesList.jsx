@@ -91,6 +91,8 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
           ? walletAddresses.map((address) => {
               return (
                 <AddressCard
+                  setAddresses={setAddresses}
+                  walletAddresses={walletAddresses}
                   id={address.id}
                   key={address.id}
                   name={address.name}

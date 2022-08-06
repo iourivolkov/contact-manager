@@ -16,7 +16,20 @@ const style = {
   alignItems: "center",
 };
 
-const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
+const DeleteAddressModal = ({
+  isDeleteModal,
+  setIsDeleteModal,
+  id,
+  setAddresses,
+  walletAddresses,
+}) => {
+  const handleDeleteAddress = (id) => {
+    const filteredAddresses = walletAddresses?.filter((address) => {
+      return address.id !== id;
+    });
+    setAddresses(filteredAddresses);
+  };
+
   return (
     <div>
       <Modal
@@ -62,6 +75,7 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
               <Button
                 disableElevation
                 disableRipple
+                onClick={() => handleDeleteAddress(id)}
                 variant="contained"
                 size="large"
                 sx={{

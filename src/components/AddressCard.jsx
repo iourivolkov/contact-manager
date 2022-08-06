@@ -17,7 +17,14 @@ import {
   Stack,
 } from "@mui/material";
 
-const AddressCard = ({ name, walletAddress, chain, id }) => {
+const AddressCard = ({
+  name,
+  walletAddress,
+  chain,
+  id,
+  setAddresses,
+  walletAddresses,
+}) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
 
@@ -34,7 +41,6 @@ const AddressCard = ({ name, walletAddress, chain, id }) => {
       <CardMedia
         component="img"
         height="120"
-        // image={chain === "Ethereum" ? Ethereum : Solana}
         image={
           (chain === "Ethereum" && Ethereum) ||
           (chain === "Solana" && Solana) ||
@@ -97,6 +103,9 @@ const AddressCard = ({ name, walletAddress, chain, id }) => {
         {isDeleteModal && (
           <DeleteAddressModal
             id={id}
+            walletAddresses={walletAddresses}
+            setAddresses={setAddresses}
+            walletAddress={walletAddress}
             isDeleteModal={isDeleteModal}
             setIsDeleteModal={setIsDeleteModal}
           />

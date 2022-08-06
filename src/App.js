@@ -35,8 +35,6 @@ const addressesArray = [
 function App() {
   const [addresses, setAddresses] = useState(addressesArray);
 
-  // console.log(addresses);
-
   return (
     <div className="App">
       <Navigation title={title} />
