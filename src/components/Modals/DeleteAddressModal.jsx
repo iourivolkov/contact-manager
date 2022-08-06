@@ -16,7 +16,7 @@ const style = {
   alignItems: "center",
 };
 
-const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal }) => {
+const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
   return (
     <div>
       <Modal

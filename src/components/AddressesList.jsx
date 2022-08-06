@@ -12,8 +12,6 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
     setIsAddModal(true);
   };
 
-  console.log(walletAddresses);
-
   return (
     <>
       <Box
@@ -89,16 +87,19 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
           alignItems: "center",
         }}
       >
-        {walletAddresses?.map((address) => {
-          return (
-            <AddressCard
-              key={address.id}
-              name={address.name}
-              walletAddress={address.walletAddress}
-              chain={address.chain}
-            />
-          );
-        })}
+        {Array.isArray(walletAddresses)
+          ? walletAddresses.map((address) => {
+              return (
+                <AddressCard
+                  id={address.id}
+                  key={address.id}
+                  name={address.name}
+                  walletAddress={address.walletAddress}
+                  chain={address.chain}
+                />
+              );
+            })
+          : null}
       </Stack>
     </>
   );

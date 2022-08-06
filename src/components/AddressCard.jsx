@@ -17,9 +17,10 @@ import {
   Stack,
 } from "@mui/material";
 
-const AddressCard = ({ name, walletAddress, chain }) => {
+const AddressCard = ({ name, walletAddress, chain, id }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
+
   return (
     <Card
       sx={{
@@ -95,6 +96,7 @@ const AddressCard = ({ name, walletAddress, chain }) => {
         )}
         {isDeleteModal && (
           <DeleteAddressModal
+            id={id}
             isDeleteModal={isDeleteModal}
             setIsDeleteModal={setIsDeleteModal}
           />

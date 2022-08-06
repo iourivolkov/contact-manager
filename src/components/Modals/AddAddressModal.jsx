@@ -56,10 +56,8 @@ const AddContactModal = ({
       walletAddress: newWalletAddress,
       chain: walletChain,
     };
-    setAddresses((prev) => ({
-      newAddress,
-      ...walletAddresses,
-    }));
+    setAddresses((prev) => [newAddress, ...prev]);
+    console.log(walletAddresses);
   };
 
   return (
@@ -88,6 +86,7 @@ const AddContactModal = ({
           <form onSubmit={handleAddAddress}>
             <Stack spacing={3}>
               <TextField
+                type="text"
                 label="Address Type"
                 type="text"
                 onChange={handleAddressType}
