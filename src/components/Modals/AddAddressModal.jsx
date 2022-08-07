@@ -58,6 +58,8 @@ const AddContactModal = ({
     };
     setAddresses((prev) => [newAddress, ...prev]);
     console.log(walletAddresses);
+    console.log("New address added!");
+    setIsAddModal(false);
   };
 
   return (
@@ -86,6 +88,9 @@ const AddContactModal = ({
           <form onSubmit={handleAddAddress}>
             <Stack spacing={3}>
               <TextField
+                sx={{
+                  fontFamily: "Futura",
+                }}
                 type="text"
                 label="Address Type"
                 type="text"
@@ -93,12 +98,18 @@ const AddContactModal = ({
                 value={addressType}
               />
               <TextField
+                sx={{
+                  fontFamily: "Futura",
+                }}
                 label="Wallet Address"
                 type="text"
                 onChange={handleWalletAddress}
                 value={newWalletAddress}
               />
               <TextField
+                sx={{
+                  fontFamily: "Futura",
+                }}
                 label="Chain"
                 type="text"
                 onChange={handleWalletChain}

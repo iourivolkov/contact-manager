@@ -46,6 +46,7 @@ const AddressCard = ({
           (chain === "Solana" && Solana) ||
           (chain === "Avalanche" && avax)
         }
+        // image={chain === "Ethereum" ? Ethereum : Solana}
         alt="chain banner"
       />
       <Stack

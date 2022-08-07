@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
-import SearchContacts from "./SearchAddresses";
+import SearchAddresses from "./SearchAddresses";
 import AddContactModal from "./Modals/AddAddressModal";
 import AddressCard from "./AddressCard";
 
@@ -66,7 +66,10 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
             flexDirection: "column",
           }}
         >
-          <SearchContacts />
+          <SearchAddresses
+            walletAddresses={walletAddresses}
+            setAddresses={setAddresses}
+          />
         </Box>
       </Box>
 
