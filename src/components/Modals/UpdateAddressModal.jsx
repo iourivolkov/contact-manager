@@ -24,9 +24,15 @@ const style = {
   alignItems: "center",
 };
 
-const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
+const UpdateAddressModal = ({
+  isEditModal,
+  setIsEditModal,
+  id,
+  walletAddresses,
+  walletAddress,
+}) => {
   const [addressName, setAddressName] = useState("");
-  const [walletAddress, setWalletAddress] = useState("");
+  const [updateWalletAddress, setUpdateWalletAddress] = useState("");
   const [walletChain, setWalletChain] = useState("");
   const [updateAddress, setUpdateAddress] = useState(null);
 
@@ -35,7 +41,7 @@ const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
   };
 
   const handleWalletAddress = (e) => {
-    setWalletAddress(e.target.value);
+    setUpdateWalletAddress(e.target.value);
   };
 
   const handleWalletChain = (e) => {
@@ -45,11 +51,13 @@ const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
   // updated address requires -> id, newAddress
   const handleUpdateAddress = (e) => {
     e.preventDefault();
+
     setUpdateAddress({
       name: addressName,
-      walletAddress: walletAddress,
+      walletAddress: updateWalletAddress,
       chain: walletChain,
     });
+
     console.log(updateAddress);
   };
 
@@ -96,7 +104,7 @@ const UpdateAddressModal = ({ isEditModal, setIsEditModal }) => {
                 type="text"
                 label="Wallet Address"
                 onChange={handleWalletAddress}
-                value={walletAddress}
+                value={updateWalletAddress}
               />
               <TextField
                 type="text"

@@ -46,7 +46,6 @@ const AddressCard = ({
           (chain === "Solana" && Solana) ||
           (chain === "Avalanche" && avax)
         }
-        // image={chain === "Ethereum" ? Ethereum : Solana}
         alt="chain banner"
       />
       <Stack
@@ -97,6 +96,9 @@ const AddressCard = ({
         </CardActions>
         {isEditModal && (
           <UpdateAddressModal
+            id={id}
+            walletAddresses={walletAddresses}
+            walletAddress={walletAddress}
             isEditModal={isEditModal}
             setIsEditModal={setIsEditModal}
           />
