@@ -88,6 +88,7 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
           flexWrap: "wrap",
           justifyContent: "space-around",
           alignItems: "center",
+          margin: "0 2.5em 0 2.5em",
         }}
       >
         {Array.isArray(walletAddresses)
