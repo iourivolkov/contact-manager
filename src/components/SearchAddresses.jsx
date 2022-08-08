@@ -2,13 +2,23 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
+import { useState } from "react";
 
 const SearchAddresses = ({ walletAddresses, setAddresses }) => {
-  const handleSearchAddress = (walletType) => {
-    const searchResults = walletAddresses?.filter((address) => {
-      return address.name === walletType;
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchInput = (e) => {
+    setSearchInput(e.target.value);
+    console.log(searchInput);
+  };
+
+  const filterResults = (e) => {
+    e.preventDefault();
+
+    const filteredResults = walletAddresses.filter((address) => {
+      return address.name === searchInput;
     });
-    setAddresses(searchResults);
+    setAddresses(filteredResults);
   };
   return (
     <Paper
@@ -26,14 +36,14 @@ const SearchAddresses = ({ walletAddresses, setAddresses }) => {
       <InputBase
         sx={{ ml: 1, flex: 1, fontFamily: "Futura" }}
         placeholder="Search addresses.."
+        onChange={handleSearchInput}
+        value={searchInput}
       />
       <IconButton
         type="submit"
         sx={{ p: "10px" }}
         aria-label="search"
-        onSubmit={() => {
-          handleSearchAddress(walletAddresses.name);
-        }}
+        onClick={filterResults}
       >
         <SearchIcon />
       </IconButton>
