@@ -78,7 +78,13 @@ const AddressCard = ({
           >
             {name}
           </Typography>
-          <OutlinedInput type="text" value={walletAddress}></OutlinedInput>
+          <OutlinedInput
+            sx={{
+              fontFamily: "Futura",
+            }}
+            type="text"
+            value={walletAddress}
+          ></OutlinedInput>
           <CopyToClipboard text={walletAddress} onCopy={onCopyText}>
             <Button>
               <ContentCopyIcon />
