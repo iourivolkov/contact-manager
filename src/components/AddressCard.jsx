@@ -6,6 +6,8 @@ import DeleteAddressModal from "./Modals/DeleteAddressModal";
 import UpdateAddressModal from "./Modals/UpdateAddressModal";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
 import {
   Card,
@@ -15,6 +17,7 @@ import {
   Button,
   Typography,
   Stack,
+  OutlinedInput,
 } from "@mui/material";
 
 const AddressCard = ({
@@ -27,13 +30,24 @@ const AddressCard = ({
 }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
+  // used for the copy to clipboard feature
+  const [text, setText] = useState("");
+  const [isCopied, setIsCopied] = useState(false);
+
+  const onCopyText = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1000);
+  };
 
   return (
     <Card
       sx={{
         boxShadow: "none",
         border: "0.5px solid grey",
-        maxWidth: 400,
+        width: 400,
+        maxWidth: 700,
         marginTop: "5em",
         borderRadius: "0",
       }}
@@ -64,9 +78,12 @@ const AddressCard = ({
           >
             {name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {walletAddress}
-          </Typography>
+          <OutlinedInput type="text" value={walletAddress}></OutlinedInput>
+          <CopyToClipboard text={walletAddress} onCopy={onCopyText}>
+            <Button>
+              <ContentCopyIcon />
+            </Button>
+          </CopyToClipboard>
         </CardContent>
         <CardActions>
           <Button
