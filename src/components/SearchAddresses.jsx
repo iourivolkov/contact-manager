@@ -16,7 +16,11 @@ const SearchAddresses = ({ walletAddresses, setAddresses }) => {
     e.preventDefault();
 
     const filteredResults = walletAddresses.filter((address) => {
-      return address.name === searchInput;
+      return (
+        address.name === searchInput ||
+        address.chain === searchInput ||
+        address.walletAddress === searchInput
+      );
     });
     setAddresses(filteredResults);
   };
