@@ -46,7 +46,7 @@ const AddressesList = ({ walletAddresses, setAddresses }) => {
                 fontWeight: "bold",
                 cursor: "pointer",
                 height: "3em",
-                borderRadius: "0",
+                borderRadius: "10",
               }}
             >
               Add New +

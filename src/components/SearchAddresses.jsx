@@ -20,7 +20,7 @@ const SearchAddresses = ({ walletAddresses, setAddresses }) => {
         alignItems: "center",
         width: 300,
         bgcolor: "#f0f0f0",
-        borderRadius: "0",
+        borderRadius: "10",
       }}
     >
       <InputBase

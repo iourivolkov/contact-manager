@@ -30,8 +30,6 @@ const AddressCard = ({
 }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
-  // used for the copy to clipboard feature
-  const [text, setText] = useState("");
   const [isCopied, setIsCopied] = useState(false);
 
   const onCopyText = () => {
@@ -49,7 +47,7 @@ const AddressCard = ({
         width: 400,
         maxWidth: 700,
         marginTop: "5em",
-        borderRadius: "0",
+        borderRadius: "10",
       }}
     >
       <CardMedia
@@ -78,18 +76,34 @@ const AddressCard = ({
           >
             {name}
           </Typography>
-          <OutlinedInput
+          <Stack
             sx={{
-              fontFamily: "Futura",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
             }}
-            type="text"
-            value={walletAddress}
-          ></OutlinedInput>
-          <CopyToClipboard text={walletAddress} onCopy={onCopyText}>
-            <Button>
-              <ContentCopyIcon />
-            </Button>
-          </CopyToClipboard>
+          >
+            <OutlinedInput
+              sx={{
+                fontFamily: "Futura",
+              }}
+              type="text"
+              value={walletAddress}
+            ></OutlinedInput>
+            <CopyToClipboard text={walletAddress} onCopy={onCopyText}>
+              <Button>{isCopied === false && <ContentCopyIcon />}</Button>
+            </CopyToClipboard>
+            {isCopied && (
+              <Typography
+                sx={{
+                  fontFamily: "Futura",
+                }}
+              >
+                Copied!
+              </Typography>
+            )}
+          </Stack>
         </CardContent>
         <CardActions>
           <Button
@@ -100,7 +114,7 @@ const AddressCard = ({
             disableRipple
             size="medium"
             variant="contained"
-            sx={{ bgcolor: "#536DFE", borderRadius: "0" }}
+            sx={{ bgcolor: "#536DFE", borderRadius: "10" }}
           >
             <EditIcon />
           </Button>
@@ -112,7 +126,7 @@ const AddressCard = ({
             disableRipple
             size="medium"
             variant="contained"
-            sx={{ bgcolor: "#D32F2F", borderRadius: "0" }}
+            sx={{ bgcolor: "#D32F2F", borderRadius: "10" }}
           >
             <DeleteIcon />
           </Button>
