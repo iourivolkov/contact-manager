@@ -1,5 +1,6 @@
 import { Box, Button, Typography, Modal, Stack } from "@mui/material";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AppContext from "../../Context";
 
 const style = {
   position: "absolute",
@@ -16,13 +17,8 @@ const style = {
   alignItems: "center",
 };
 
-const DeleteAddressModal = ({
-  isDeleteModal,
-  setIsDeleteModal,
-  id,
-  setAddresses,
-  walletAddresses,
-}) => {
+const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
+  const { walletAddresses, setAddresses } = useContext(AppContext);
   const handleDeleteAddress = (id) => {
     const filteredAddresses = walletAddresses?.filter((address) => {
       return address.id !== id;

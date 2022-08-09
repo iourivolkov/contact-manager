@@ -20,14 +20,7 @@ import {
   OutlinedInput,
 } from "@mui/material";
 
-const AddressCard = ({
-  name,
-  walletAddress,
-  chain,
-  id,
-  setAddresses,
-  walletAddresses,
-}) => {
+const AddressCard = ({ name, walletAddress, chain, id }) => {
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -135,18 +128,14 @@ const AddressCard = ({
         {isEditModal && (
           <UpdateAddressModal
             id={id}
-            walletAddresses={walletAddresses}
             walletAddress={walletAddress}
             isEditModal={isEditModal}
             setIsEditModal={setIsEditModal}
-            setAddresses={setAddresses}
           />
         )}
         {isDeleteModal && (
           <DeleteAddressModal
             id={id}
-            walletAddresses={walletAddresses}
-            setAddresses={setAddresses}
             walletAddress={walletAddress}
             isDeleteModal={isDeleteModal}
             setIsDeleteModal={setIsDeleteModal}

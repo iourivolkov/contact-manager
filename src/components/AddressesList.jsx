@@ -69,10 +69,7 @@ const AddressesList = () => {
             flexDirection: "column",
           }}
         >
-          <SearchAddresses
-            walletAddresses={walletAddresses}
-            setAddresses={setAddresses}
-          />
+          <SearchAddresses />
         </Box>
       </Box>
 

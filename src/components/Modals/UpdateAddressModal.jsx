@@ -7,7 +7,8 @@ import {
   TextField,
 } from "@mui/material";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AppContext from "../../Context";
 
 const style = {
   position: "absolute",
@@ -28,10 +29,9 @@ const UpdateAddressModal = ({
   isEditModal,
   setIsEditModal,
   id,
-  walletAddresses,
   walletAddress,
-  setAddresses,
 }) => {
+  const { walletAddresses, setAddresses } = useContext(AppContext);
   const [addressName, setAddressName] = useState("");
   const [updateWalletAddress, setUpdateWalletAddress] = useState("");
   const [walletChain, setWalletChain] = useState("");

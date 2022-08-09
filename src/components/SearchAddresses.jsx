@@ -2,9 +2,11 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import AppContext from "../Context";
 
-const SearchAddresses = ({ walletAddresses, setAddresses }) => {
+const SearchAddresses = () => {
+  const { setAddresses, walletAddresses } = useContext(AppContext);
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearchInput = (e) => {
