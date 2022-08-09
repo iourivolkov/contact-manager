@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Box, Typography, Button, Stack } from "@mui/material";
 import SearchAddresses from "./SearchAddresses";
 import AddContactModal from "./Modals/AddAddressModal";
 import AddressCard from "./AddressCard";
+import AppContext from "../Context";
 
 const AddressesList = ({ walletAddresses, setAddresses }) => {
   const [isAddModal, setIsAddModal] = useState(false);

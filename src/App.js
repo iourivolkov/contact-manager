@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navigation from "./components/Navigation";
 import AddressesList from "./components/AddressesList";
 import { v4 as uuidv4 } from "uuid";
+import AppContext from "../src/Context";
 
 const title = "PBLK";
 
@@ -36,10 +37,10 @@ function App() {
   const [addresses, setAddresses] = useState(addressesArray);
 
   return (
-    <div className="App">
+    <AppContext.Provider value={(setAddresses, addresses)}>
       <Navigation title={title} />
       <AddressesList walletAddresses={addresses} setAddresses={setAddresses} />
-    </div>
+    </AppContext.Provider>
   );
 }
 

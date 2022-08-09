@@ -30,6 +30,7 @@ const UpdateAddressModal = ({
   id,
   walletAddresses,
   walletAddress,
+  setAddresses,
 }) => {
   const [addressName, setAddressName] = useState("");
   const [updateWalletAddress, setUpdateWalletAddress] = useState("");
@@ -49,13 +50,11 @@ const UpdateAddressModal = ({
   };
 
   // updated address requires -> id, newAddress
-  const handleUpdateAddress = (e) => {
+  const handleUpdateAddress = (e, id) => {
     e.preventDefault();
 
     setUpdateAddress({
       name: addressName,
-      walletAddress: updateWalletAddress,
-      chain: walletChain,
     });
 
     console.log(updateAddress);
@@ -82,10 +81,14 @@ const UpdateAddressModal = ({
               fontWeight: "bold",
             }}
           >
-            Update Address
+            Update Label
           </Typography>
           <br />
-          <form onSubmit={handleUpdateAddress}>
+          <form
+            onSubmit={() => {
+              handleUpdateAddress(id);
+            }}
+          >
             <Stack
               spacing={3}
               sx={{
@@ -100,7 +103,7 @@ const UpdateAddressModal = ({
                 onChange={handleAddressName}
                 value={addressName}
               />
-              <TextField
+              {/* <TextField
                 type="text"
                 label="Wallet Address"
                 onChange={handleWalletAddress}
@@ -111,7 +114,7 @@ const UpdateAddressModal = ({
                 label="Chain"
                 onChange={handleWalletChain}
                 value={walletChain}
-              />
+              /> */}
               <Stack direction="row" spacing={2}>
                 <Button
                   type="submit"

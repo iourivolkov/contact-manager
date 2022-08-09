@@ -139,6 +139,7 @@ const AddressCard = ({
             walletAddress={walletAddress}
             isEditModal={isEditModal}
             setIsEditModal={setIsEditModal}
+            setAddresses={setAddresses}
           />
         )}
         {isDeleteModal && (
