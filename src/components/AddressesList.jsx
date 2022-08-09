@@ -80,8 +80,6 @@ const AddressesList = () => {
         <AddContactModal
           isAddModal={isAddModal}
           setIsAddModal={setIsAddModal}
-          walletAddresses={walletAddresses}
-          setAddresses={setAddresses}
         />
       )}
       <Stack

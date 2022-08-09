@@ -6,8 +6,9 @@ import {
   TextField,
   Stack,
 } from "@mui/material";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
+import AppContext from "../../Context";
 
 const style = {
   position: "absolute",
@@ -24,12 +25,8 @@ const style = {
   alignItems: "center",
 };
 
-const AddContactModal = ({
-  isAddModal,
-  setIsAddModal,
-  walletAddresses,
-  setAddresses,
-}) => {
+const AddContactModal = ({ isAddModal, setIsAddModal }) => {
+  const { walletAddresses, setAddresses } = useContext(AppContext);
   const handleClose = () => setIsAddModal(false);
 
   const [addressType, setAddressType] = useState("");
