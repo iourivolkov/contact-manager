@@ -47,6 +47,7 @@ const AddressCard = ({
         width: 400,
         maxWidth: 700,
         marginTop: "5em",
+        marginBottom: "2.5em",
         borderRadius: "10",
       }}
     >

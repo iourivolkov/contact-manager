@@ -28,6 +28,21 @@ const Navigation = ({ title }) => {
           >
             {title}
           </Typography>
+          <Button
+            disableElevation
+            disableRipple
+            variant="contained"
+            sx={{
+              textTransform: "uppercase",
+              fontFamily: "Futura",
+              fontWeight: "bold",
+              borderRadius: "5px",
+              marginRight: "5em",
+              bgcolor: "#512DA8",
+            }}
+          >
+            Connect
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
