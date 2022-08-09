@@ -37,9 +37,14 @@ function App() {
   const [addresses, setAddresses] = useState(addressesArray);
 
   return (
-    <AppContext.Provider value={(setAddresses, addresses)}>
+    <AppContext.Provider
+      value={{
+        walletAddresses: addresses,
+        setAddresses: setAddresses,
+      }}
+    >
       <Navigation title={title} />
-      <AddressesList walletAddresses={addresses} setAddresses={setAddresses} />
+      <AddressesList />
     </AppContext.Provider>
   );
 }

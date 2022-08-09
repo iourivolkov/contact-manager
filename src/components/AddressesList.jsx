@@ -5,7 +5,9 @@ import AddContactModal from "./Modals/AddAddressModal";
 import AddressCard from "./AddressCard";
 import AppContext from "../Context";
 
-const AddressesList = ({ walletAddresses, setAddresses }) => {
+const AddressesList = () => {
+  const { walletAddresses, setAddresses } = useContext(AppContext);
+
   const [isAddModal, setIsAddModal] = useState(false);
 
   const handleAddContact = () => {
