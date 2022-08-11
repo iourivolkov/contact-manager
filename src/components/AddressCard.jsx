@@ -29,7 +29,7 @@ const AddressCard = ({ name, walletAddress, chain, id }) => {
     setIsCopied(true);
     setTimeout(() => {
       setIsCopied(false);
-    }, 1000);
+    }, 500);
   };
 
   return (

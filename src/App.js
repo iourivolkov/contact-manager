@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Navigation from "./components/Navigation";
 import AddressesList from "./components/AddressesList";
 import { v4 as uuidv4 } from "uuid";
