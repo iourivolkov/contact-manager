@@ -7,7 +7,6 @@ import {
   Stack,
 } from "@mui/material";
 import { useState, useContext } from "react";
-import { v4 as uuidv4 } from "uuid";
 import AppContext from "../../Context";
 
 const style = {
@@ -71,20 +70,6 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
     setAddresses((prev) => [newAddress, ...prev]);
     setIsAddModal(false);
   };
-
-  // const handleAddAddress = (e) => {
-  //   e.preventDefault();
-  //   const newAddress = {
-  //     id: uuidv4(),
-  //     name: addressType,
-  //     walletAddress: newWalletAddress,
-  //     chain: walletChain,
-  //   };
-  //   setAddresses((prev) => [newAddress, ...prev]);
-  //   console.log(walletAddresses);
-  //   console.log("New address added!");
-  //   setIsAddModal(false);
-  // };
 
   return (
     <div>

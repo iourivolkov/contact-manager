@@ -18,7 +18,7 @@ const style = {
 };
 
 // DELETE request to remove address from PBLK database
-
+// @todo - delete works after page refresh
 const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
   const { walletAddresses, setAddresses } = useContext(AppContext);
 
@@ -30,16 +30,15 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
       }
     ).then((data) => {
       console.log(data);
-      const filteredAddresses = walletAddresses?.filter((address) => {
-        return address.id !== id;
-      });
-      setAddresses(filteredAddresses);
+      if (data.ok && data.status === 200) {
+        console.log("loaded");
+        const filteredAddresses = walletAddresses?.filter((address) => {
+          return address.id !== id;
+        });
+        setAddresses(filteredAddresses);
+      }
     });
   };
-  // const filteredAddresses = walletAddresses?.filter((address) => {
-  //   return address.id !== id;
-  // });
-  // setAddresses(filteredAddresses);
 
   return (
     <div>
