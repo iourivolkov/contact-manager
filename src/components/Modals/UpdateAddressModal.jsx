@@ -6,7 +6,6 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
-
 import { useState, useContext } from "react";
 import AppContext from "../../Context";
 
@@ -50,6 +49,7 @@ const UpdateAddressModal = ({
   };
 
   // updated address requires -> id, newAddress
+  // PUT request to update address in PBLK database
   const handleUpdateAddress = (e, id) => {
     e.preventDefault();
 

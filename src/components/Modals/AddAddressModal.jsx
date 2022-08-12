@@ -45,6 +45,8 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
     setWalletChain(e.target.value);
   };
 
+  // POST request to add addresses to PBLK database
+
   const handleAddAddress = (e) => {
     e.preventDefault();
     const newAddress = {

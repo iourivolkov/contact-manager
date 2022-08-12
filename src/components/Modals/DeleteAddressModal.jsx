@@ -17,6 +17,8 @@ const style = {
   alignItems: "center",
 };
 
+// DELETE request to remove address from PBLK database
+
 const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
   const { walletAddresses, setAddresses } = useContext(AppContext);
   const handleDeleteAddress = (id) => {
