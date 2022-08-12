@@ -1,13 +1,14 @@
 import Ethereum from "../assets/images/Ethereum.png";
 import Solana from "../assets/images/Solana.png";
 import avax from "../assets/images/avax.jpeg";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import DeleteAddressModal from "./Modals/DeleteAddressModal";
 import UpdateAddressModal from "./Modals/UpdateAddressModal";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import AppContext from "../Context";
 
 import {
   Card,
@@ -21,6 +22,8 @@ import {
 } from "@mui/material";
 
 const AddressCard = ({ name, walletAddress, chain, id }) => {
+  const { walletAddresses, setAddresses } = useContext(AppContext);
+
   const [isEditModal, setIsEditModal] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
@@ -68,7 +71,7 @@ const AddressCard = ({ name, walletAddress, chain, id }) => {
             component="div"
             textAlign="center"
           >
-            {name}
+            {name.toUpperCase()}
           </Typography>
           <Stack
             sx={{

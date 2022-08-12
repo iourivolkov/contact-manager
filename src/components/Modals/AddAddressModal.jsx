@@ -52,7 +52,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
 
     const newAddress = {
       name: addressType,
-      walletAddresses: newWalletAddress,
+      walletAddress: newWalletAddress,
       chain: walletChain,
     };
 

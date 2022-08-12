@@ -7,11 +7,12 @@ import AppContext from "../Context";
 
 const AddressesList = () => {
   const { walletAddresses, setAddresses } = useContext(AppContext);
+  console.log(walletAddresses);
 
   const [isAddModal, setIsAddModal] = useState(false);
 
   const handleAddContact = () => {
-    console.log("Contact added!");
+    console.log("Add Contact Modal Opened!");
     setIsAddModal(true);
   };
 
@@ -93,10 +94,8 @@ const AddressesList = () => {
           ? walletAddresses.map((address) => {
               return (
                 <AddressCard
-                  setAddresses={setAddresses}
-                  walletAddresses={walletAddresses}
-                  id={address.id}
                   key={address.id}
+                  id={address.id}
                   name={address.name}
                   walletAddress={address.walletAddress}
                   chain={address.chain}
@@ -104,6 +103,7 @@ const AddressesList = () => {
               );
             })
           : null}
+        {console.log(walletAddresses)}
       </Stack>
     </>
   );
