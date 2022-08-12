@@ -67,7 +67,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
       }
     );
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     setAddresses((prev) => [newAddress, ...prev]);
     setIsAddModal(false);
   };

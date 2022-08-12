@@ -21,12 +21,25 @@ const style = {
 
 const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
   const { walletAddresses, setAddresses } = useContext(AppContext);
+
   const handleDeleteAddress = (id) => {
-    const filteredAddresses = walletAddresses?.filter((address) => {
-      return address.id !== id;
+    fetch(
+      `https://pblk-ef287-default-rtdb.firebaseio.com/addresses/${id}.json`,
+      {
+        method: "DELETE",
+      }
+    ).then((data) => {
+      console.log(data);
+      const filteredAddresses = walletAddresses?.filter((address) => {
+        return address.id !== id;
+      });
+      setAddresses(filteredAddresses);
     });
-    setAddresses(filteredAddresses);
   };
+  // const filteredAddresses = walletAddresses?.filter((address) => {
+  //   return address.id !== id;
+  // });
+  // setAddresses(filteredAddresses);
 
   return (
     <div>

@@ -48,7 +48,7 @@ function App() {
 
       const data = await response.json();
       // receive a collection of objects
-      console.log(data);
+      // console.log(data);
 
       const loadedAddresses = [];
 
@@ -61,7 +61,7 @@ function App() {
         });
       }
       setAddresses(loadedAddresses);
-      console.log(loadedAddresses);
+      // console.log(loadedAddresses);
     } catch (error) {
       setError(error.message);
     }

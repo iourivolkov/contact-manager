@@ -7,7 +7,7 @@ import AppContext from "../Context";
 
 const AddressesList = () => {
   const { walletAddresses, setAddresses } = useContext(AppContext);
-  console.log(walletAddresses);
+  // console.log(walletAddresses);
 
   const [isAddModal, setIsAddModal] = useState(false);
 
@@ -103,7 +103,6 @@ const AddressesList = () => {
               );
             })
           : null}
-        {console.log(walletAddresses)}
       </Stack>
     </>
   );
