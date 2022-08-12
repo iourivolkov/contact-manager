@@ -50,12 +50,13 @@ function App() {
       console.log(data);
 
       const loadedAddresses = [];
+
       for (const key in data) {
         loadedAddresses.push({
           id: key,
           name: data[key].name,
           walletAddress: data[key].walletAddress,
-          chain: data[key].walletChain,
+          chain: data[key].chain,
         });
       }
       setAddresses(loadedAddresses);

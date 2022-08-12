@@ -47,19 +47,44 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
 
   // POST request to add addresses to PBLK database
 
-  const handleAddAddress = (e) => {
+  const addAddressHandler = async (e) => {
     e.preventDefault();
+
     const newAddress = {
-      id: uuidv4(),
       name: addressType,
-      walletAddress: newWalletAddress,
+      walletAddresses: newWalletAddress,
       chain: walletChain,
     };
+
+    const response = await fetch(
+      "https://pblk-ef287-default-rtdb.firebaseio.com/addresses.json",
+      {
+        method: "POST",
+        body: JSON.stringify(newAddress),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+    console.log(data);
     setAddresses((prev) => [newAddress, ...prev]);
-    console.log(walletAddresses);
-    console.log("New address added!");
     setIsAddModal(false);
   };
+
+  // const handleAddAddress = (e) => {
+  //   e.preventDefault();
+  //   const newAddress = {
+  //     id: uuidv4(),
+  //     name: addressType,
+  //     walletAddress: newWalletAddress,
+  //     chain: walletChain,
+  //   };
+  //   setAddresses((prev) => [newAddress, ...prev]);
+  //   console.log(walletAddresses);
+  //   console.log("New address added!");
+  //   setIsAddModal(false);
+  // };
 
   return (
     <div>
@@ -84,7 +109,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
           </Typography>
           <br />
           <br />
-          <form onSubmit={handleAddAddress}>
+          <form onSubmit={addAddressHandler}>
             <Stack spacing={3}>
               <TextField
                 sx={{
