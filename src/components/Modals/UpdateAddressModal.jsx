@@ -77,7 +77,7 @@ const UpdateAddressModal = ({
             component="h2"
             sx={{
               textTransform: "uppercase",
-              fontFamily: "Futura",
+              fontFamily: "Figtree",
               fontWeight: "bold",
             }}
           >
@@ -103,7 +103,7 @@ const UpdateAddressModal = ({
                 onChange={handleAddressName}
                 value={addressName}
               />
-              {/* <TextField
+              <TextField
                 type="text"
                 label="Wallet Address"
                 onChange={handleWalletAddress}
@@ -114,7 +114,7 @@ const UpdateAddressModal = ({
                 label="Chain"
                 onChange={handleWalletChain}
                 value={walletChain}
-              /> */}
+              />
               <Stack direction="row" spacing={2}>
                 <Button
                   type="submit"
@@ -123,6 +123,7 @@ const UpdateAddressModal = ({
                   variant="contained"
                   size="large"
                   sx={{
+                    fontFamily: "Figtree",
                     textTransform: "uppercase",
                     color: "white",
                     bgcolor: "blue",

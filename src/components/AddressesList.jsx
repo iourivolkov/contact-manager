@@ -31,8 +31,8 @@ const AddressesList = () => {
             <Typography
               variant="h6"
               sx={{
-                fontFamily: "Futura",
-                fontWeight: "bold",
+                fontFamily: "Figtree",
+                fontWeight: "700",
                 fontSize: "2em",
               }}
             >
@@ -46,11 +46,14 @@ const AddressesList = () => {
               size="large"
               sx={{
                 bgcolor: "green",
-                fontFamily: "futura",
-                fontWeight: "bold",
+                fontFamily: "Figtree",
+                fontWeight: "700",
                 cursor: "pointer",
                 height: "3em",
                 borderRadius: "10",
+                "&:hover": {
+                  bgcolor: "darkGreen",
+                },
               }}
             >
               Add New +
@@ -58,7 +61,7 @@ const AddressesList = () => {
           </Stack>
           <Typography
             variant="h6"
-            sx={{ fontFamily: "Futura", fontSize: "1em" }}
+            sx={{ fontFamily: "Figtree", fontSize: "1em" }}
           >
             Displaying {walletAddresses.length} results
           </Typography>

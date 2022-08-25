@@ -40,7 +40,7 @@ const SearchAddresses = () => {
       }}
     >
       <InputBase
-        sx={{ ml: 1, flex: 1, fontFamily: "Futura" }}
+        sx={{ ml: 1, flex: 1, fontFamily: "Figtree" }}
         placeholder="Search addresses.."
         onChange={handleSearchInput}
         value={searchInput}

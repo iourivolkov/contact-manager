@@ -23,12 +23,9 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
   const { walletAddresses, setAddresses } = useContext(AppContext);
 
   const handleDeleteAddress = (id) => {
-    fetch(
-      `https://pblk-ef287-default-rtdb.firebaseio.com/addresses/${id}.json`,
-      {
-        method: "DELETE",
-      }
-    ).then((data) => {
+    fetch(`http://localhost:5001/wallets/${id}`, {
+      method: "DELETE",
+    }).then((data) => {
       console.log(data);
       if (data.ok && data.status === 200) {
         console.log("loaded");
@@ -55,8 +52,8 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
             component="h2"
             sx={{
               textTransform: "uppercase",
-              fontFamily: "Futura",
-              fontWeight: "bold",
+              fontFamily: "Figtree",
+              fontWeight: "700",
             }}
           >
             Delete Address
@@ -75,7 +72,7 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
               variant="h6"
               sx={{
                 textAlign: "center",
-                fontFamily: "Futura",
+                fontFamily: "Figtree",
                 fontSize: "1em",
               }}
             >
@@ -89,10 +86,15 @@ const DeleteAddressModal = ({ isDeleteModal, setIsDeleteModal, id }) => {
                 variant="contained"
                 size="large"
                 sx={{
+                  fontFamily: "Figtree",
+                  fontWeight: "700",
                   textTransform: "uppercase",
                   color: "white",
                   bgcolor: "red",
                   borderRadius: "0",
+                  "&:hover": {
+                    bgcolor: "red",
+                  },
                 }}
               >
                 Delete

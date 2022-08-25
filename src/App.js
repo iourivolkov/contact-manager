@@ -3,7 +3,7 @@ import Navigation from "./components/Navigation";
 import AddressesList from "./components/AddressesList";
 import AppContext from "../src/Context";
 
-const title = "PBLK";
+const title = "keepr";
 
 function App() {
   const [addresses, setAddresses] = useState([]);
@@ -14,9 +14,7 @@ function App() {
   const fetchAddresses = useCallback(async () => {
     setError(null);
     try {
-      const response = await fetch(
-        "https://pblk-ef287-default-rtdb.firebaseio.com/addresses.json"
-      );
+      const response = await fetch("http://localhost:5001/wallets");
 
       const data = await response.json();
       // receive a collection of objects

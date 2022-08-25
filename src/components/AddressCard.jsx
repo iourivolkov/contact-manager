@@ -68,6 +68,8 @@ const AddressCard = ({ name, walletAddress, chain, id }) => {
           <Typography
             gutterBottom
             variant="h5"
+            fontFamily="Figtree"
+            fontWeight="700"
             component="div"
             textAlign="center"
           >
@@ -83,7 +85,7 @@ const AddressCard = ({ name, walletAddress, chain, id }) => {
           >
             <OutlinedInput
               sx={{
-                fontFamily: "Futura",
+                fontFamily: "Figtree",
               }}
               type="text"
               value={walletAddress}
@@ -94,7 +96,7 @@ const AddressCard = ({ name, walletAddress, chain, id }) => {
             {isCopied && (
               <Typography
                 sx={{
-                  fontFamily: "Futura",
+                  fontFamily: "Figtree",
                 }}
               >
                 Copied!

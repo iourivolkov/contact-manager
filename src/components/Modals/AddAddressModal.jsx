@@ -55,18 +55,15 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
       chain: walletChain,
     };
 
-    const response = await fetch(
-      "https://pblk-ef287-default-rtdb.firebaseio.com/addresses.json",
-      {
-        method: "POST",
-        body: JSON.stringify(newAddress),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch("http://localhost:5001/wallets", {
+      method: "POST",
+      body: JSON.stringify(newAddress),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
     setAddresses((prev) => [newAddress, ...prev]);
     setIsAddModal(false);
   };
@@ -86,7 +83,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
             component="h2"
             sx={{
               textTransform: "uppercase",
-              fontFamily: "Futura",
+              fontFamily: "Figtree",
               fontWeight: "bold",
             }}
           >
@@ -98,7 +95,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
             <Stack spacing={3}>
               <TextField
                 sx={{
-                  fontFamily: "Futura",
+                  fontFamily: "Figtree",
                 }}
                 type="text"
                 label="Address Type"
@@ -108,7 +105,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
               />
               <TextField
                 sx={{
-                  fontFamily: "Futura",
+                  fontFamily: "Figtree",
                 }}
                 label="Wallet Address"
                 type="text"
@@ -117,7 +114,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
               />
               <TextField
                 sx={{
-                  fontFamily: "Futura",
+                  fontFamily: "Figtree",
                 }}
                 label="Chain"
                 type="text"
@@ -133,6 +130,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
                 sx={{
                   textTransform: "uppercase",
                   color: "white",
+                  fontFamily: "Futura",
                   bgcolor: "green",
                   borderRadius: "0",
                 }}

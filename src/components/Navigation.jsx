@@ -20,7 +20,7 @@ const Navigation = ({ title }) => {
             component="div"
             sx={{
               flexGrow: 1,
-              fontFamily: "Futura",
+              fontFamily: "Figtree",
               fontWeight: "bold",
               fontSize: "1.7em",
               color: "black",
@@ -28,21 +28,6 @@ const Navigation = ({ title }) => {
           >
             {title}
           </Typography>
-          <Button
-            disableElevation
-            disableRipple
-            variant="contained"
-            sx={{
-              textTransform: "uppercase",
-              fontFamily: "Futura",
-              fontWeight: "bold",
-              borderRadius: "5px",
-              marginRight: "5em",
-              bgcolor: "#512DA8",
-            }}
-          >
-            Connect
-          </Button>
         </Toolbar>
       </AppBar>
     </Box>
