@@ -7,7 +7,6 @@ import AppContext from "../Context";
 
 const AddressesList = () => {
   const { walletAddresses, setAddresses } = useContext(AppContext);
-  // console.log(walletAddresses);
 
   const [isAddModal, setIsAddModal] = useState(false);
 
@@ -32,7 +31,7 @@ const AddressesList = () => {
               variant="h6"
               sx={{
                 fontFamily: "Figtree",
-                fontWeight: "700",
+                fontWeight: "bold",
                 fontSize: "2em",
               }}
             >
@@ -73,7 +72,7 @@ const AddressesList = () => {
             flexDirection: "column",
           }}
         >
-          <SearchAddresses />
+          {/* <SearchAddresses /> */}
         </Box>
       </Box>
 

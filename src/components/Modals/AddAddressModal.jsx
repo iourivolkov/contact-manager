@@ -38,6 +38,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
 
   const handleWalletAddress = (e) => {
     setNewWalletAddress(e.target.value);
+    console.log(newWalletAddress);
   };
 
   const handleWalletChain = (e) => {
@@ -51,7 +52,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
 
     const newAddress = {
       name: addressType,
-      walletAddress: newWalletAddress,
+      address: newWalletAddress,
       chain: walletChain,
     };
 
@@ -131,6 +132,7 @@ const AddContactModal = ({ isAddModal, setIsAddModal }) => {
                   textTransform: "uppercase",
                   color: "white",
                   fontFamily: "Futura",
+                  fontWeight: "100",
                   bgcolor: "green",
                   borderRadius: "0",
                 }}

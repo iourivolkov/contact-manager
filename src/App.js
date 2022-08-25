@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from "react";
 import Navigation from "./components/Navigation";
 import AddressesList from "./components/AddressesList";
 import AppContext from "../src/Context";
+import axios from "axios";
 
 const title = "keepr";
 
@@ -13,6 +14,7 @@ function App() {
 
   const fetchAddresses = useCallback(async () => {
     setError(null);
+
     try {
       const response = await fetch("http://localhost:5001/wallets");
 
@@ -26,7 +28,7 @@ function App() {
         loadedAddresses.push({
           id: key,
           name: data[key].name,
-          walletAddress: data[key].walletAddress,
+          walletAddress: data[key].address,
           chain: data[key].chain,
         });
       }
